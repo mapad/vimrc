@@ -79,3 +79,18 @@ au TabLeave * let g:lasttab = tabpagenr()
 " close buffer and keep the window split
 nnoremap bd :bp \|bd #<CR>
 
+" Vim-GO
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+
+autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+
+" Vim-GO but might slow down
+let g:go_auto_type_info = 1
+let g:go_auto_sameids = 1
+let g:go_metalinter_autosave = 1
+
