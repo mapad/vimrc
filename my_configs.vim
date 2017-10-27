@@ -97,8 +97,12 @@ let g:go_metalinter_autosave = 1
 " NERD Tree
 let g:NERDTreeWinPos = "left"
 
+" TMUX MOUSE support
 set mouse+=a
 if &term =~'^screen'
     set ttymouse=xterm2
 endif
+
+" Ctrl+W Ctrl+] Ctrl+W Ctrl+t: open tag into new tab
+nnoremap <silent><Leader><C-]> <C-w><C-]><C-w>T
 
