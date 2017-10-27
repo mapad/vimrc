@@ -91,6 +91,14 @@ autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 
 " Vim-GO but might slow down
 let g:go_auto_type_info = 1
-let g:go_auto_sameids = 1
+"let g:go_auto_sameids = 1
 let g:go_metalinter_autosave = 1
+
+" NERD Tree
+let g:NERDTreeWinPos = "left"
+
+set mouse+=a
+if &term =~'^screen'
+    set ttymouse=xterm2
+endif
 
