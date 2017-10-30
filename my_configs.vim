@@ -91,7 +91,7 @@ autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 
 " Vim-GO but might slow down
 let g:go_auto_type_info = 1
-"let g:go_auto_sameids = 1
+let g:go_auto_sameids = 0
 let g:go_metalinter_autosave = 1
 
 " NERD Tree
@@ -105,4 +105,32 @@ endif
 
 " Ctrl+W Ctrl+] Ctrl+W Ctrl+t: open tag into new tab
 nnoremap <silent><Leader><C-]> <C-w><C-]><C-w>T
+
+" Multi cursors Default mapping
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<C-c>'
+let g:multicursor_insert_maps=1
+let g:multicursor_normal_maps=1
+
+nnoremap <silent> <Leader>j :MultipleCursorsFind <C-R>/<CR>
+vnoremap <silent> <Leader>j :MultipleCursorsFind <C-R>/<CR>
+
+" Called once right before you start selecting multiple cursors
+function! Multiple_cursors_before()
+  if exists(':NeoCompleteLock')==2
+   exe 'NeoCompleteLock'
+  endif
+endfunction
+
+" Called once only when the multiple selection is canceled (default <Esc>)
+function! Multiple_cursors_after()
+  if exists(':NeoCompleteUnlock')==2
+    exe 'NeoCompleteUnlock'
+  endif
+endfunction
+
+" force redraw when doing C-c to solve double lines display
+nmap <C-c> :redraw!<CR>
 
