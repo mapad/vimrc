@@ -131,6 +131,22 @@ function! Multiple_cursors_after()
   endif
 endfunction
 
+" highlight characters after 80 colun
+let &colorcolumn=join(range(81,999),",")
+highlight ColorColumn ctermbg=16
+
+" Indent line
+let g:indentLine_enabled = 1
+
+" Tmux mouse
+if has('mouse')
+set mouse+=a
+  if &term =~ '^screen'
+      " tmux knows the extended mouse mode
+      set ttymouse=xterm2
+  endif
+endif
+
 " force redraw when doing C-c to solve double lines display
 nmap <C-c> :redraw!<CR>
 
