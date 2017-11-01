@@ -1,4 +1,4 @@
-let g:neocomplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 1
 
 " buffer name in window
 "set guitablabel=%t
@@ -117,19 +117,19 @@ let g:multicursor_normal_maps=1
 nnoremap <silent> <Leader>j :MultipleCursorsFind <C-R>/<CR>
 vnoremap <silent> <Leader>j :MultipleCursorsFind <C-R>/<CR>
 
-" Called once right before you start selecting multiple cursors
-function! Multiple_cursors_before()
-  if exists(':NeoCompleteLock')==2
-   exe 'NeoCompleteLock'
-  endif
-endfunction
+" " Called once right before you start selecting multiple cursors
+" function! Multiple_cursors_before()
+"   if exists(':NeoCompleteLock')==2
+"    exe 'NeoCompleteLock'
+"   endif
+" endfunction
 
-" Called once only when the multiple selection is canceled (default <Esc>)
-function! Multiple_cursors_after()
-  if exists(':NeoCompleteUnlock')==2
-    exe 'NeoCompleteUnlock'
-  endif
-endfunction
+" " Called once only when the multiple selection is canceled (default <Esc>)
+" function! Multiple_cursors_after()
+"   if exists(':NeoCompleteUnlock')==2
+"     exe 'NeoCompleteUnlock'
+"   endif
+" endfunction
 
 " highlight characters after 80 colun
 let &colorcolumn=join(range(81,999),",")
