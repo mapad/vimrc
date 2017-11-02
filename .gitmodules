@@ -43,3 +43,6 @@
 [submodule "my_plugins/ultisnips"]
 	path = my_plugins/ultisnips
 	url = https://github.com/SirVer/ultisnips
+[submodule "my_plugins/vimproc.vim"]
+	path = my_plugins/vimproc.vim
+	url = https://github.com/Shougo/vimproc.vim

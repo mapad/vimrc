@@ -15,4 +15,6 @@ source ~/.vim_runtime/my_configs.vim
 catch
 endtry' > ~/.vimrc
 
+bash cd ~/.vim_runtime/my_plugins/vimproc.vim; make
+
 echo "Installed the Ultimate Vim configuration successfully! Enjoy :-)"
