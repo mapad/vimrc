@@ -46,3 +46,6 @@
 [submodule "my_plugins/vimproc.vim"]
 	path = my_plugins/vimproc.vim
 	url = https://github.com/Shougo/vimproc.vim
+[submodule "my_plugins/vim-easy-align"]
+	path = my_plugins/vim-easy-align
+	url = https://github.com/junegunn/vim-easy-align
