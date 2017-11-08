@@ -150,3 +150,7 @@ endif
 " force redraw when doing C-c to solve double lines display
 nmap <C-c> :redraw!<CR>
 
+set clipboard=unnamed
+
+" Auto Detect GOPATH (used by gb to look into vendor directory)
+let g:go_autodetect_gopath = 1
