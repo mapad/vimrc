@@ -96,6 +96,8 @@ let g:go_metalinter_autosave = 1
 
 " NERD Tree
 let g:NERDTreeWinPos = "left"
+map <Leader>e :NERDTreeMirrorToggle <CR>
+map <Leader>E :NERDTreeTabsOpen <CR>
 
 " TMUX MOUSE support
 set mouse+=a
@@ -118,20 +120,20 @@ nnoremap <silent> <Leader>j :MultipleCursorsFind <C-R>/<CR>
 vnoremap <silent> <Leader>j :MultipleCursorsFind <C-R>/<CR>
 
 " " Called once right before you start selecting multiple cursors
-" function! Multiple_cursors_before()
-"   if exists(':NeoCompleteLock')==2
-"    exe 'NeoCompleteLock'
-"   endif
-" endfunction
+function! Multiple_cursors_before()
+  if exists(':NeoCompleteLock')==2
+   exe 'NeoCompleteLock'
+  endif
+endfunction
 
-" " Called once only when the multiple selection is canceled (default <Esc>)
-" function! Multiple_cursors_after()
-"   if exists(':NeoCompleteUnlock')==2
-"     exe 'NeoCompleteUnlock'
-"   endif
-" endfunction
+" Called once only when the multiple selection is canceled (default <Esc>)
+function! Multiple_cursors_after()
+  if exists(':NeoCompleteUnlock')==2
+    exe 'NeoCompleteUnlock'
+  endif
+endfunction
 
-" highlight characters after 80 colun
+"highlight characters after 80 colun
 let &colorcolumn=join(range(81,999),",")
 highlight ColorColumn ctermbg=16
 
