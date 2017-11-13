@@ -156,3 +156,6 @@ set clipboard=unnamed
 
 " Auto Detect GOPATH (used by gb to look into vendor directory)
 let g:go_autodetect_gopath = 1
+let g:syntastic_check_on_open = 1
+
+au FileType go let $GOPATH = go#path#Detect()
