@@ -1,0 +1,51 @@
+[submodule "my_plugins/auto-pairs"]
+	path = my_plugins/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs
+[submodule "my_plugins/deoplete-go"]
+	path = my_plugins/deoplete-go
+	url = https://github.com/zchee/deoplete-go
+[submodule "my_plugins/deoplete.nvim"]
+	path = my_plugins/deoplete.nvim
+	url = https://github.com/Shougo/deoplete.nvim/
+[submodule "my_plugins/gitsessions.vim"]
+	path = my_plugins/gitsessions.vim
+	url = https://github.com/mapad/gitsessions.vim
+[submodule "my_plugins/indentLine"]
+	path = my_plugins/indentLine
+	url = https://github.com/Yggdroot/indentLine
+[submodule "my_plugins/nvim-yarp"]
+	path = my_plugins/nvim-yarp
+	url = https://github.com/roxma/nvim-yarp
+[submodule "my_plugins/vim-delve"]
+	path = my_plugins/vim-delve
+	url = https://github.com/sebdah/vim-delve
+[submodule "my_plugins/vim-eunuch"]
+	path = my_plugins/vim-eunuch
+	url = https://github.com/tpope/vim-eunuch
+[submodule "my_plugins/vim-grepper"]
+	path = my_plugins/vim-grepper
+	url = https://github.com/mhinz/vim-grepper
+[submodule "my_plugins/vim-hug-neovim-rpc"]
+	path = my_plugins/vim-hug-neovim-rpc
+	url = https://github.com/roxma/vim-hug-neovim-rpc
+[submodule "my_plugins/vim-tmux-clipboard"]
+	path = my_plugins/vim-tmux-clipboard
+	url = https://github.com/roxma/vim-tmux-clipboard
+[submodule "my_plugins/vim-tmux-focus-events"]
+	path = my_plugins/vim-tmux-focus-events
+	url = https://github.com/tmux-plugins/vim-tmux-focus-events
+[submodule "my_plugins/vim-vinegar"]
+	path = my_plugins/vim-vinegar
+	url = https://github.com/tpope/vim-vinegar
+[submodule "my_plugins/vimshell.vim"]
+	path = my_plugins/vimshell.vim
+	url = https://github.com/Shougo/vimshell.vim
+[submodule "my_plugins/ultisnips"]
+	path = my_plugins/ultisnips
+	url = https://github.com/SirVer/ultisnips
+[submodule "my_plugins/vimproc.vim"]
+	path = my_plugins/vimproc.vim
+	url = https://github.com/Shougo/vimproc.vim
+[submodule "my_plugins/vim-tmux-navigator"]
+	path = my_plugins/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator
