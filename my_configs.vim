@@ -51,9 +51,10 @@ nnoremap <Leader>hh :!tig %:p<cr>
 let mapleader = "\<Space>"
 
 " GitGutter
+let g:gitgutter_enabled = 1
 nmap <Leader>hp :GitGutterPreviewHunk<CR>
 nmap <Leader>hs :GitGutterStageHunk<CR>
-nmap <Leader>hu :GitGutterRevertHunk<CR>
+nmap <Leader>hu :GitGutterUndoHunk<CR>
 nmap ]c :GitGutterNextHunk<CR>
 nmap [c :GitGutterPrevHunk<CR>
 
@@ -119,19 +120,25 @@ let g:multicursor_normal_maps=1
 nnoremap <silent> <Leader>j :MultipleCursorsFind <C-R>/<CR>
 vnoremap <silent> <Leader>j :MultipleCursorsFind <C-R>/<CR>
 
-" " Called once right before you start selecting multiple cursors
+" Disable Deoplete when selecting multiple cursors starts
 function! Multiple_cursors_before()
-  if exists(':NeoCompleteLock')==2
-   exe 'NeoCompleteLock'
-  endif
+    if exists('*deoplete#disable')
+        exe 'call deoplete#toggle()'
+    elseif exists(':NeoCompleteLock') == 2
+        exe 'NeoCompleteLock'
+    endif
 endfunction
 
-" Called once only when the multiple selection is canceled (default <Esc>)
+" Enable Deoplete when selecting multiple cursors ends
 function! Multiple_cursors_after()
-  if exists(':NeoCompleteUnlock')==2
-    exe 'NeoCompleteUnlock'
-  endif
+    if exists('*deoplete#enable')
+        exe 'call deoplete#toggle()'
+    elseif exists(':NeoCompleteUnlock') == 2
+        exe 'NeoCompleteUnlock'
+    endif
 endfunction
+
+
 
 "highlight characters after 80 colun
 let &colorcolumn=join(range(81,999),",")
@@ -152,10 +159,13 @@ endif
 " force redraw when doing C-c to solve double lines display
 nmap <C-c> :redraw!<CR>
 
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 " Auto Detect GOPATH (used by gb to look into vendor directory)
-let g:go_autodetect_gopath = 1
+" let g:go_autodetect_gopath = 1
+" au FileType go let $GOPATH = go#path#Detect()
 let g:syntastic_check_on_open = 1
 
-au FileType go let $GOPATH = go#path#Detect()
+" configure gitlab for vim
+let g:fugitive_gitlab_domains = ['https://gitlab.rdpfd.com/']
+let g:gitlab_api_keys = {'gitlab.rdpfd.com': 'B4mZ-NgsdvYV4GMaYa5x'}
