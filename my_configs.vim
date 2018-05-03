@@ -142,7 +142,9 @@ endfunction
 
 "highlight characters after 80 colun
 let &colorcolumn=join(range(81,999),",")
-highlight ColorColumn ctermbg=16
+highlight ColorColumn ctermbg=0
+
+" au FilterWritePre * if &diff | colorscheme peaksea | endif
 
 " Indent line
 let g:indentLine_enabled = 1
@@ -169,3 +171,9 @@ let g:syntastic_check_on_open = 1
 " configure gitlab for vim
 let g:fugitive_gitlab_domains = ['https://gitlab.rdpfd.com/']
 let g:gitlab_api_keys = {'gitlab.rdpfd.com': 'B4mZ-NgsdvYV4GMaYa5x'}
+
+" use rg for grep
+if executable("rg")
+    set grepprg=rg\ --vimgrep\ --no-heading
+    set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
